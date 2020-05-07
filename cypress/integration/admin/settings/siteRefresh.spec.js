@@ -12,13 +12,9 @@ context("Page Builder Settings", () => {
             .type(`New-site-name-${id}`)
             .findByText(/save/i)
             .click()
-            .findByText("Settings updated successfully.");
+            .wait(2000);
 
-        cy.visit(Cypress.env("SITE_URL"))
-            .reloadUntil(() => {
-                // We wait until the document contains the newly added menu.
-                return Cypress.$(`:contains(New-site-name-${id})`).length;
-            })
+        cy.visitAndReloadOnceInvalidated(Cypress.env("SITE_URL"))
             .findByTestId("pb-desktop-header")
             .within(() => {
                 cy.findByText(`New-site-name-${id}`).should("exist");
@@ -40,13 +36,9 @@ context("Page Builder Settings", () => {
             .type(instagram)
             .findByText(/save/i)
             .click()
-            .findByText("Settings updated successfully.");
+            .wait(2000);
 
-        cy.visit(Cypress.env("SITE_URL"))
-            .reloadUntil(() => {
-                // We wait until the document contains the newly added menu.
-                return Cypress.$(`a[href="${facebook}"]`).length;
-            })
+        cy.visitAndReloadOnceInvalidated(Cypress.env("SITE_URL"))
             .findByTestId("pb-footer")
             .within(() => {
                 cy.get(`a[href="${facebook}"]`).should("exist");

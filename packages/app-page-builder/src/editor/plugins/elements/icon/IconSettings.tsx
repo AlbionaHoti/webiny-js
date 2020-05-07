@@ -44,12 +44,7 @@ const IconSettings = ({ element, updateElement }) => {
             <Tabs>
                 <Tab label={"Icon"}>
                     <IconPicker label={"Icon"} value={icon.id} updateValue={updateIcon} />
-                    <Input
-                        label={"Width"}
-                        value={icon.width}
-                        updateValue={updateWidth}
-                        placeholder="50"
-                    />
+                    <Input label={"Width"} value={icon.width || 50} updateValue={updateWidth} />
                     <ColorPicker
                         label={"Color"}
                         value={icon.color}
