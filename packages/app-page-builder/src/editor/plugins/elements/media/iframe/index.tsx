@@ -22,9 +22,9 @@ const PreviewBox = styled("div")({
 
 export default () => [
     createEmbedPlugin({
-        type: "youtube",
+        type: "iFrame",
         toolbar: {
-            title: "Youtube",
+            title: "iFrame",
             group: "pb-editor-element-group-media",
             preview() {
                 return (
@@ -37,7 +37,7 @@ export default () => [
         onCreate: "open-settings",
         oembed: {
             renderEmbed(props) {
-                return <YoutubeEmbed {...props} />;
+                return <IFrameEmbed {...props} />;
             }
         },
         renderElementPreview({ width, height }) {
@@ -45,10 +45,10 @@ export default () => [
         }
     }),
     createEmbedSettingsPlugin({
-        type: "youtube",
+        type: "iFrame",
         render({ Bind }) {
             return (
-                <Tab icon={<MediaIcon />} label="YouTube">
+                <Tab icon={<MediaIcon />} label="iFrame">
                     <Grid>
                         <Cell span={12}>
                             <Bind
