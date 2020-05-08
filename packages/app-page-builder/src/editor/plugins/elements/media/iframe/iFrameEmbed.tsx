@@ -1,8 +1,9 @@
 import * as React from "react";
 import { css } from "emotion";
 import { get } from "dot-prop-immutable";
-import { OEmbedProps } from "@webiny/app-page-builder/editor/components/OEmbed";
+// import { OEmbedProps } from "@webiny/app-page-builder/editor/components/OEmbed";
 
+import { usePageBuilder } from "@webiny/app-page-builder/hooks/usePageBuilder";
 const outerWrapper = css({
     boxSizing: "border-box"
 });
@@ -34,7 +35,7 @@ const scaleableVideo = css({
     }
 });
 
-const IFrameEmbed = (props: OEmbedProps) => {
+const IFrameEmbed = props => {
     const { element, data } = props;
 
     if (data && data.loading) {

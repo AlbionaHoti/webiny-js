@@ -6,7 +6,7 @@ import { Grid, Cell } from "@webiny/ui/Grid";
 import { PbEditorPageElementPlugin } from "@webiny/app-page-builder/types";
 import { createEmbedSettingsPlugin, createEmbedPlugin } from "./../../utils/oembed";
 import { ReactComponent as MediaIcon } from "./../../../elementGroups/media/round-music_video-24px.svg";
-import IFrameEmbed from "./iFrameEmbed";
+import YoutubeEmbed from "./YoutubeEmbed";
 import placeholder from "./placeholder.png";
 import { validation } from "@webiny/validation";
 import { ReactComponent as LogoIcon } from "./youtube-brands.svg";
